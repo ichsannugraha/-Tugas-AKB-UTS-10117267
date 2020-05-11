@@ -47,3 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 }
+
+
+/*
+    Tanggal Pengerjaan  : 5/11/2020
+    NIM                 : 10117267
+    Nama                : Ichsan Nugraha
+    Kelas               : IF-8
+ */
