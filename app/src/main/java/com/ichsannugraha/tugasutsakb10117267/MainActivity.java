@@ -8,6 +8,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ichsannugraha.tugasutsakb10117267.Fragments.KontakFragment;
+import com.ichsannugraha.tugasutsakb10117267.Fragments.ProfileFragment;
+import com.ichsannugraha.tugasutsakb10117267.Fragments.TemanFragment;
 
 public class MainActivity extends AppCompatActivity {
 

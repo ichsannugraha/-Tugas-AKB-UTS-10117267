@@ -1,31 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/graylight">
-
-    <RelativeLayout
-        android:id="@+id/relativeLayout1"
-        android:layout_width="match_parent"
-        android:layout_height="230dp">
-
-        <LinearLayout
-            android:background="@color/colorPrimary"
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/profilePicture"
-                android:layout_marginTop="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                android:src="@drawable/profile"/>
-
-        </LinearLayout>
-    </RelativeLayout>
+    tools:context=".AddBiodataActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -36,7 +17,7 @@
             android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:id="@+id/profileLayout"
+                android:id="@+id/profileLayoutEdit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -57,9 +38,9 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="13sp"/>
 
-                    <TextView
-                        android:id="@+id/nimProfilTxt"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/nimProfilEdit"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
@@ -68,7 +49,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="1dp"
                         android:background="@color/grey"/>
 
                 </LinearLayout>
@@ -86,9 +67,9 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="13sp"/>
 
-                    <TextView
-                        android:id="@+id/namaProfilTxt"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/namaProfilEdit"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
@@ -97,7 +78,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="1dp"
                         android:background="@color/grey"/>
 
                 </LinearLayout>
@@ -115,9 +96,9 @@
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="13sp"/>
 
-                    <TextView
-                        android:id="@+id/kelasProfilTxt"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/kelasProfilEdit"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
@@ -126,7 +107,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="5dp"
                         android:background="@color/grey"/>
 
                 </LinearLayout>
@@ -140,13 +121,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Deskripsi Diri"
+                        android:text="Telepon"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="13sp"/>
 
-                    <TextView
-                        android:id="@+id/deskripsiProfilTxt"
-                        android:layout_width="wrap_content"
+                    <EditText
+                        android:id="@+id/teleponProfilEdit"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
@@ -155,10 +136,81 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="15dp"
+                        android:layout_marginTop="1dp"
                         android:background="@color/grey"/>
 
                 </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"/>
+
+                    <EditText
+                        android:id="@+id/emailProfilEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#000000"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/grey"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Social Media"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"/>
+
+                    <EditText
+                        android:id="@+id/sosmedProfilEdit"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#000000"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="1dp"
+                        android:background="@color/grey"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/addBiodataBtn"
+                    android:layout_below="@id/profileLayoutEdit"
+                    android:textColor="#fff"
+                    android:background="@drawable/rounded_corner_button"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="35dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tambah Biodata Teman"/>
+
             </LinearLayout>
         </RelativeLayout>
     </ScrollView>
