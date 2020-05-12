@@ -28,7 +28,7 @@ public class DetailTemanActivity extends AppCompatActivity {
         mEmailDetail = findViewById(R.id.emailDetailTxt);
         mSosmedDetail = findViewById(R.id.sosmedDetailTxt);
 
-        Intent i =getIntent();
+        Intent i = getIntent();
 
         if (i.hasExtra("nimTeman") && i.hasExtra("namaTeman") && i.hasExtra("kelasTeman") &&
                 i.hasExtra("teleponTeman") && i.hasExtra("emailTeman") && i.hasExtra("sosmedTeman")) {

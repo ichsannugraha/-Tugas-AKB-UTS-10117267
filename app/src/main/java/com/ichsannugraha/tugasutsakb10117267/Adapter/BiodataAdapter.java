@@ -58,12 +58,12 @@ public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataV
             return;
         }
 
-        String nim = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NIM));
-        String nama = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NAMA));
-        String kelas = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_KELAS));
-        String telepon = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_TELEPON));
-        String email = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_EMAIL));
-        String sosmed = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_SOSMED));
+        final String nim = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NIM));
+        final String nama = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NAMA));
+        final String kelas = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_KELAS));
+        final String telepon = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_TELEPON));
+        final String email = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_EMAIL));
+        final String sosmed = mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_SOSMED));
 
         holder.nimText.setText(nim);
         holder.namaText.setText(nama);
@@ -74,12 +74,12 @@ public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataV
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(mContext, DetailTemanActivity.class);
-                i.putExtra("nimTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NIM)));
-                i.putExtra("namaTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NAMA)));
-                i.putExtra("kelasTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_KELAS)));
-                i.putExtra("teleponTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_TELEPON)));
-                i.putExtra("emailTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_EMAIL)));
-                i.putExtra("sosmedTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_SOSMED)));
+                i.putExtra("nimTeman", nim);
+                i.putExtra("namaTeman", nama);
+                i.putExtra("kelasTeman", kelas);
+                i.putExtra("teleponTeman", telepon);
+                i.putExtra("emailTeman", email);
+                i.putExtra("sosmedTeman", sosmed);
                 mContext.startActivity(i);
             }
         });
