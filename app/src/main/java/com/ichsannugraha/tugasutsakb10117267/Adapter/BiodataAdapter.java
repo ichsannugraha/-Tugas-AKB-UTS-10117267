@@ -1,15 +1,20 @@
-package com.ichsannugraha.tugasutsakb10117267;
+package com.ichsannugraha.tugasutsakb10117267.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.ichsannugraha.tugasutsakb10117267.BiodataContract;
+import com.ichsannugraha.tugasutsakb10117267.DetailTemanActivity;
+import com.ichsannugraha.tugasutsakb10117267.R;
 
 public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataViewHolder> {
     private Context mContext;
@@ -27,6 +32,7 @@ public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataV
         public TextView teleponText;
         public TextView emailText;
         public TextView sosmedText;
+        public RelativeLayout parentLayout;
 
         public BiodataViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -34,6 +40,7 @@ public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataV
             nimText = itemView.findViewById(R.id.nimTeman);
             namaText = itemView.findViewById(R.id.namaTeman);
             kelasText = itemView.findViewById(R.id.kelasTeman);
+            parentLayout = itemView.findViewById(R.id.parentLayout);
         }
     }
 
@@ -61,6 +68,21 @@ public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataV
         holder.nimText.setText(nim);
         holder.namaText.setText(nama);
         holder.kelasText.setText(kelas);
+        holder.itemView.setTag(nim);
+
+        holder.parentLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(mContext, DetailTemanActivity.class);
+                i.putExtra("nimTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NIM)));
+                i.putExtra("namaTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_NAMA)));
+                i.putExtra("kelasTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_KELAS)));
+                i.putExtra("teleponTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_TELEPON)));
+                i.putExtra("emailTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_EMAIL)));
+                i.putExtra("sosmedTeman", mCursor.getString(mCursor.getColumnIndex(BiodataContract.BiodataEntry.COLUMN_SOSMED)));
+                mContext.startActivity(i);
+            }
+        });
     }
 
     @Override
@@ -80,3 +102,11 @@ public class BiodataAdapter extends RecyclerView.Adapter<BiodataAdapter.BiodataV
         }
     }
 }
+
+
+/*
+    Tanggal Pengerjaan  : 5/12/2020
+    NIM                 : 10117267
+    Nama                : Ichsan Nugraha
+    Kelas               : IF-8
+ */

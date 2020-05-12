@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/graylight">
+    tools:context=".DetailTemanActivity"
+    android:orientation="vertical">
 
     <RelativeLayout
-        android:id="@+id/relativeLayoutProfil"
+        android:id="@+id/relativeLayoutDetail"
         android:layout_width="match_parent"
         android:layout_height="230dp">
 
         <LinearLayout
-            android:background="@color/colorPrimary"
+            android:background="@color/grey"
             android:layout_width="match_parent"
-            android:layout_height="230dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/profilePicture"
                 android:layout_marginTop="45dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
-                android:src="@drawable/profile"/>
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_contacts_black_24dp"/>
 
         </LinearLayout>
     </RelativeLayout>
@@ -36,7 +37,6 @@
             android:layout_marginTop="5dp">
 
             <LinearLayout
-                android:id="@+id/profileLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
@@ -58,13 +58,12 @@
                         android:textSize="13sp"/>
 
                     <TextView
-                        android:id="@+id/nimProfilTxt"
+                        android:id="@+id/nimDetailTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:text="10117267"/>
+                        android:textSize="18sp" />
 
                     <View
                         android:layout_width="match_parent"
@@ -88,13 +87,12 @@
                         android:textSize="13sp"/>
 
                     <TextView
-                        android:id="@+id/namaProfilTxt"
+                        android:id="@+id/namaDetailTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:text="Ichsan Nugraha"/>
+                        android:textSize="18sp"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -118,13 +116,12 @@
                         android:textSize="13sp"/>
 
                     <TextView
-                        android:id="@+id/kelasProfilTxt"
+                        android:id="@+id/kelasDetailTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="18sp"
-                        android:text="IF-8"/>
+                        android:textSize="18sp"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -143,12 +140,70 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Deskripsi Diri"
+                        android:text="Telepon"
                         android:textColor="@color/colorPrimaryDark"
                         android:textSize="13sp"/>
 
                     <TextView
-                        android:id="@+id/deskripsiProfilTxt"
+                        android:id="@+id/teleponDetailTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#000000"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/grey"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/emailDetailTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="#000000"
+                        android:textSize="18sp"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@color/grey"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Social Media"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="13sp"/>
+
+                    <TextView
+                        android:id="@+id/sosmedDetailTxt"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"

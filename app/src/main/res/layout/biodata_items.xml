@@ -18,7 +18,7 @@
             android:id="@+id/gambarTeman"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@drawable/ic_contacts_black_24dp" />
 
         <TextView
             android:id="@+id/nimTeman"

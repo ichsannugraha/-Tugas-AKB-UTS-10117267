@@ -70,3 +70,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
  */
 }
+
+
+/*
+    Tanggal Pengerjaan  : 5/12/2020
+    NIM                 : 10117267
+    Nama                : Ichsan Nugraha
+    Kelas               : IF-8
+ */

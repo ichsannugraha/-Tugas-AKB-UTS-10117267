@@ -3,27 +3,46 @@ package com.ichsannugraha.tugasutsakb10117267;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.ichsannugraha.tugasutsakb10117267.Adapter.SlidePagerAdapter;
 import com.ichsannugraha.tugasutsakb10117267.Fragments.KontakFragment;
 import com.ichsannugraha.tugasutsakb10117267.Fragments.ProfileFragment;
 import com.ichsannugraha.tugasutsakb10117267.Fragments.TemanFragment;
+import com.ichsannugraha.tugasutsakb10117267.Fragments.TentangAplikasiFragment;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private ViewPager viewPager;
+    private PagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
-        bottomNav.setSelectedItemId(R.id.nav_profile);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new ProfileFragment()).commit();
-        bottomNav.setOnNavigationItemSelectedListener(navListener);
+        //List<Fragment> list = new ArrayList<>();
+        //list.add(new TentangAplikasiFragment());
+        //list.add(new ProfileFragment());
+        //list.add(new KontakFragment());
+        //list.add(new TemanFragment());
 
+        //viewPager = findViewById(R.id.pager);
+        //pagerAdapter = new SlidePagerAdapter(getSupportFragmentManager(), list);
+        //viewPager.setAdapter(pagerAdapter);
+
+        BottomNavigationView bottomNav = findViewById(R.id.bottom_navigation);
+        bottomNav.setSelectedItemId(R.id.nav_teman);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new TemanFragment()).commit();
+        bottomNav.setOnNavigationItemSelectedListener(navListener);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =

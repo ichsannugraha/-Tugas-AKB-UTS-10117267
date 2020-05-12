@@ -4,21 +4,20 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ichsannugraha.tugasutsakb10117267.AddBiodataActivity;
-import com.ichsannugraha.tugasutsakb10117267.BiodataAdapter;
+import com.ichsannugraha.tugasutsakb10117267.Adapter.BiodataAdapter;
 import com.ichsannugraha.tugasutsakb10117267.BiodataContract;
 import com.ichsannugraha.tugasutsakb10117267.DatabaseHelper;
 import com.ichsannugraha.tugasutsakb10117267.R;
@@ -39,9 +38,22 @@ public class TemanFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         mAdapter = new BiodataAdapter(getActivity(), getAllItems());
         recyclerView.setAdapter(mAdapter);
+        mAdapter.swapCursor(getAllItems());
+
+        new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,
+                ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                removeItem((String) viewHolder.itemView.getTag());
+            }
+        }).attachToRecyclerView(recyclerView);
 
         FloatingActionButton mFloatingBtn =rootView.findViewById(R.id.floatingBtn);
-
         mFloatingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +76,12 @@ public class TemanFragment extends Fragment {
                 null,
                 BiodataContract.BiodataEntry.COLUMN_NIM + " ASC"
         );
+    }
+
+    private void removeItem(String nim) {
+        mDatabase.delete(BiodataContract.BiodataEntry.TABLE_NAME,
+                BiodataContract.BiodataEntry.COLUMN_NIM + "=" + nim, null);
+        mAdapter.swapCursor(getAllItems());
     }
 }
 

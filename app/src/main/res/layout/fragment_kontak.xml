@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/relativeLayoutKontak"
         android:layout_width="match_parent"
         android:layout_height="230dp">
 
@@ -15,7 +15,7 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/profilePicture"
+                android:id="@+id/profilePictureKontak"
                 android:layout_marginTop="45dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="115dp"
@@ -61,7 +61,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        android:text="081395043962"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -90,7 +91,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        android:text="nugraha.ichsan99@gmail.com"/>
 
                     <View
                         android:layout_width="match_parent"
@@ -119,7 +121,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
                         android:textColor="#000000"
-                        android:textSize="18sp"/>
+                        android:textSize="18sp"
+                        android:text="Facebook : Ichsan Nugraha"/>
 
                     <View
                         android:layout_width="match_parent"

@@ -3,6 +3,7 @@ package com.ichsannugraha.tugasutsakb10117267;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
@@ -25,6 +26,8 @@ public class AddBiodataActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_biodata);
+        getSupportActionBar().setTitle("Tambah Biodata");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         mDatabase = dbHelper.getWritableDatabase();
@@ -63,5 +66,16 @@ public class AddBiodataActivity extends AppCompatActivity {
         cv.put(BiodataContract.BiodataEntry.COLUMN_SOSMED, sosmed);
 
         mDatabase.insert(BiodataContract.BiodataEntry.TABLE_NAME, null, cv);
+
+        Intent i = new Intent(this, MainActivity.class);
+        startActivity(i);
     }
 }
+
+
+/*
+    Tanggal Pengerjaan  : 5/12/2020
+    NIM                 : 10117267
+    Nama                : Ichsan Nugraha
+    Kelas               : IF-8
+ */

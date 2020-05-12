@@ -6,7 +6,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import com.ichsannugraha.tugasutsakb10117267.R;
 
 public class ProfileFragment extends Fragment {
+    private TextView mDeskripsiProfil;
 
     @Nullable
     @Override
@@ -24,7 +27,8 @@ public class ProfileFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_profile, container, false);
         roundPict(rootView);
 
-
+        mDeskripsiProfil = rootView.findViewById(R.id.deskripsiProfilTxt);
+        addDeskripsi(mDeskripsiProfil);
 
         return rootView;
     }
@@ -37,6 +41,12 @@ public class ProfileFragment extends Fragment {
         RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(getResources(), bitmap);
         roundedBitmapDrawable.setCircular(true);
         imageView.setImageDrawable(roundedBitmapDrawable);
+    }
+
+    public void addDeskripsi(TextView mDeskripsiProfil) {
+        mDeskripsiProfil.setText("Nama saya Ichsan Nugraha, NIM saya 10117267." +
+                " Saya kelas IF-8 dan seorang mahasiswa UNIKOM." +
+                " Saya hobi nonton kartun dan senang mendengarkan musik.");
     }
 }
 

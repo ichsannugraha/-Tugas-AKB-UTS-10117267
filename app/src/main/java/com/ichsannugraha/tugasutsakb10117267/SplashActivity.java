@@ -14,7 +14,7 @@ public class SplashActivity extends Activity {
         Thread thread = new Thread() {
             public void run() {
                 try {
-                    sleep(2200);
+                    sleep(2500);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 } finally {

@@ -17,5 +17,12 @@ public class BiodataContract {
         public static final String COLUMN_EMAIL = "email";
         public static final String COLUMN_SOSMED = "sosmed";
     }
-
 }
+
+
+/*
+    Tanggal Pengerjaan  : 5/12/2020
+    NIM                 : 10117267
+    Nama                : Ichsan Nugraha
+    Kelas               : IF-8
+ */
